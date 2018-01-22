@@ -1,0 +1,23 @@
+{
+  "name": "booklist",
+  "version": "1.0.0",
+  "description": "A simple website, which shows books stored in a library database. We are able to add new books through the form and delete books.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "books"
+  ],
+  "author": "S J Tate",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.2",
+    "nodemon": "^1.14.11"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,48 @@
+<html>
+<head>
+  <title> A Simple Booklist </title>
+  <!-- We connect to the jquery library through a cdn. -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Statics are delivered through the public folder. -->
+  <script src='./public/javascripts/booklist.js'></script>
+  <link href='./public/stylesheets/main.css' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+  <div class='container'>
+    <div class = 'header'>
+      <div class='vision'>
+        <h1> My BookList </h1>
+      </div>
+    </div>
+    <div class='addNew'>
+      <h2> Please enter a new book for your collection: </h2>
+        <label for='title'> Book title: </label><br />
+				<input type ="text" name="title" id = "newTitle"/> <br />
+				Author: <br />
+				<input type="text" name="author" id = "newAuthor" /> <br />
+				Have you read this book? <br />
+				<input type="text" name="haveRead" id = "newHaveRead" /> <br />
+				Category: <br />
+				<input type="text" name="category" id = "newCategory"/> <br />
+				URL of Book Cover: <br />
+				<input type="text" name="bookCover" id = "newBookCover"/> <br />
+				<button id="submitButton">Submit</button>
+    </div>
+    <div class='booklist'>
+      <% for(var i=0; i<books.length; i++){ %>
+        <div class='read<%= books[i].haveRead %>'>
+          <div class='bookTitleDiv'>
+            <img src='./public/images/deletebutton.svg' id=<%= books[i].title.replace(/ /g, "_") %> />
+            <h3> <%= books[i].title %> </h3>
+          </div>
+          <hr />
+          <div class='bookBody'>
+            <p> <%= books[i].author %> </p>
+            <img src=<%= books[i].bookCover %> />
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>
